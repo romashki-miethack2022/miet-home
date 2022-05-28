@@ -1,0 +1,27 @@
+.floor{
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 70px;
+  width: 220px;
+  margin-left: 20px;
+  margin-top: 2px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 10px;
+  background-color: #b1b1e2;
+  cursor: pointer;
+}
+
+.long  {
+  height: 40px;
+  line-height: 40px;
+}
+
+.floor:hover {
+  background-color: #9999f0;
+}
+
+.floor:active {
+  background-color: #47ff8e;
+}
