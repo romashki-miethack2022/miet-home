@@ -1,26 +1,30 @@
-.up {  
-  overflow: auto;
+.stage {
+  overflow-y: hidden;
+  overflow-x: auto;
   white-space: nowrap;
 }
 
-.down {
-  overflow: auto;
-  white-space: nowrap;
+.up {
+    margin-bottom: 60px;
 }
 
 .cell{
-  height: 200px;
+  height: 100px;
   width: 60px;
   margin: 2px;
   display: inline-block;
   text-align: center;
-  line-height: 12em;
+  line-height: 100px;
   border-radius: 10px;
 }
 
 .wash_room {
   background-color: #5c5cff;
   width: 128px;
+}
+
+.commandant {
+  background-color: #00e4f5;
 }
 
 .toilet {
