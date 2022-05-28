@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Miethome</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <link type="text/css" href="{% static 'miethome/css/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+<header class="header">
+    <div class="wrapper">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <a href="{% url 'home' %}" class="header__logo-link">
+                    <img src="{% static 'miethome/img/cat.png'%}" alt="На главную" class="header__logo-pic">
+                </a>
+            </div>
+
+            <nav class="header__nav">
+                <ul class="header__list">
+                    {% for item in header %}
+                    <li class="header__item">
+                        <a href="#" class="header__link">{{item.title}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock content %}
+
+</body>

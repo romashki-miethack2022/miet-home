@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-class Search(forms.ModelForm):
+class SearchForm(forms.ModelForm):
 
     stud_id = forms.IntegerField(widget=forms.NumberInput(
         attrs=({'placeholder': 'Номер студентческого', 'class': 'input-data-field', 'name': 'student_id'})))
