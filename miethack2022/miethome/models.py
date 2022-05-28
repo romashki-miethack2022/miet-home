@@ -25,4 +25,7 @@ class Student(models.Model):
     room = models.ForeignKey(Room, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
+
+
+
