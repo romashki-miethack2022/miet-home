@@ -1,9 +1,8 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Miethome</title>
+    <title>{{title}}</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
@@ -24,7 +23,7 @@
                 <ul class="header__list">
                     {% for item in header %}
                     <li class="header__item">
-                        <a href="#" class="header__link">{{item.title}}</a>
+                        <a href="{% url item.url_name %}" class="header__link">{{item.title}}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -37,3 +36,4 @@
 {% endblock content %}
 
 </body>
+</html>

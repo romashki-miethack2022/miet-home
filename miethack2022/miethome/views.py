@@ -1,6 +1,9 @@
 from django.shortcuts import render
 
-header = ['Графический поиск', 'Поиск по форме']
+header = [
+    {'title': 'Графический поиск', 'url_name': 'home'},
+    {'title': 'Поиск по форме', 'url_name': 'schematic_search'}
+]
 
 
 def index(request):
