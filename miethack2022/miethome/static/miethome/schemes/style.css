@@ -1,0 +1,54 @@
+.stage {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.up {
+    margin-bottom: 60px;
+}
+
+.cell{
+  height: 100px;
+  width: 60px;
+  margin: 2px;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 10px;
+}
+
+.wash_room {
+  background-color: #5c5cff;
+  width: 128px;
+}
+
+.commandant {
+  background-color: #00e4f5;
+}
+
+.toilet {
+  background-color: #734a4a;
+}
+
+.kitchen {
+  background-color: #ffea00;
+}
+
+.stair {
+  background-color: #787878;
+}
+
+.room {
+  background-color: #b1b1e2;
+  cursor: pointer;
+}
+
+
+.room:hover {
+  background-color: #9999f0;
+}
+
+.room:active {
+  background-color: #47ff8e;
+}
