@@ -29,6 +29,19 @@
   width: 82px;
 }
 
+.something {
+    background-color: #43df9c;
+}
+
+.warehouse {
+  background-color: #fb7f56;
+  width: 82px;
+}
+
+.small_warehouse {
+    background-color: #fb7f56;
+}
+
 .commandant {
   background-color: #00e4f5;
 }
