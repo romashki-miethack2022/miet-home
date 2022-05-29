@@ -64,8 +64,8 @@ def get_form_matches(request):
     students = []
     matches_res = ""
 
-    if request.method == 'POST':
-        form = SearchForm(request.POST)
+    if request.method == 'GET':
+        form = SearchForm(request.GET)
         if form.is_valid():
             # Поиск совпадений полей формы с бд
             data = form.cleaned_data
