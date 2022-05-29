@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class SearchForm(forms.Form):
 
     id = forms.IntegerField(required=False, widget=forms.NumberInput(
-        attrs=({'placeholder': 'Номер студентческого', 'class': 'input-data-field', 'name': 'student_id'})))
+        attrs=({'placeholder': 'Номер студенческого', 'class': 'input-data-field', 'name': 'student_id'})))
     full_name = forms.CharField(required=False, widget=forms.TextInput(
         attrs=({'placeholder': 'ФИО', 'class': 'input-data-field', 'name': 'full_name'})))
     birth_date = forms.DateField(required=False, widget=forms.DateInput(
