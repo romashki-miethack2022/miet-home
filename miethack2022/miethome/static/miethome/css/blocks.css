@@ -1,0 +1,13 @@
+.block_of_housings {
+    height: 380px;
+    display: inline-block;
+}
+
+.block_of_floors{
+    height: 380px;
+    width: 250px;
+    display: inline-block;
+}
+
+.block_of_rooms{
+}
