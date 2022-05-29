@@ -19,15 +19,6 @@ def index(request):
     return render(request, 'miethome/index.html', context=context)
 
 
-def schematic_search(request):
-    context = {
-        'title': "Графический поиск",
-        'header': header,
-    }
-
-    return render(request, 'miethome/schematic_search.html', context=context)
-
-
 def add_student(request):
     form = AddStudentForm(request.POST)
     if request.method == 'POST':
@@ -56,34 +47,41 @@ def add_student(request):
 
 
 def schematic_search(request):
-    matches = set()
+    form, students = get_form_matches(request)
+
+    context = {
+        'title': "Графический поиск",
+        'header': header,
+        'form': form,
+        'students': students
+    }
+
+    return render(request, 'miethome/schematic_search.html', context=context)
+
+
+def get_form_matches(request):
+    students = []
 
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
             # Поиск совпадений полей формы с бд
             data = form.cleaned_data
-            print(data)
             keys = data.keys()
+            my_filters = {}
+            # Добавляем все выставленные в форме фильтры
             for key in keys:
                 if data[key]:
-                    my_filter = {key: data[key]}
-                    student = Student.objects.filter(**my_filter)
-                    if student:
-                        print(f"Найдено совпадение: {student}")
-                        matches.add(student)
-                    else:
-                        print("Нет ничего")
+                    my_filters[key] = data[key]
 
-        print(matches)
+            # Получаем из бд объекты, соответствующие фильтрам
+            students = Student.objects.filter(**my_filters)
+            if students:
+                print(f"Найдено совпадение: {students}")
+            else:
+                print("Нет ничего")
 
     else:
         form = SearchForm()
 
-    context = {
-        'title': "Графический поиск",
-        'header': header,
-        'form': form,
-    }
-
-    return render(request, 'miethome/schematic_search.html', context=context)
+    return form, students

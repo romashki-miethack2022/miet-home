@@ -560,3 +560,40 @@ header__profile-pic:focus,
 header__profile-pic:active {
     opacity: 0.9;
 }
+
+/* Search page styles */
+
+.form__header {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 39px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.form__wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form_label {
+    padding-left: 10px;
+}
+
+.form_answer {
+    padding: 10px;
+}
+
+.form_btn {
+    text-align: center;
+}
+
+.matches__header {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 39px;
+    padding-bottom: 10px;
+    text-align: center;
+}

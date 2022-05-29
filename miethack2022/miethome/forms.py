@@ -27,7 +27,7 @@ class SearchForm(forms.Form):
 
 class AddStudentForm(forms.Form):
     stud_id = forms.IntegerField(widget=forms.NumberInput(
-        attrs=({'placeholder': 'Номер студентческого', 'class': 'input-data-field', 'name': 'student_id'})))
+        attrs=({'placeholder': 'Номер студенческого', 'class': 'input-data-field', 'name': 'student_id'})))
     full_name = forms.CharField(widget=forms.TextInput(
         attrs=({'placeholder': 'ФИО', 'class': 'input-data-field', 'name': 'full_name'})))
     birth_date = forms.DateField(widget=forms.DateInput(
