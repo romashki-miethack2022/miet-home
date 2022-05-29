@@ -1,1 +1,17 @@
 {% extends 'miethome/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link href="{% static 'miethome/css/rooms.css' %}" rel="stylesheet" />
+<link href="{% static 'miethome/css/housing.css' %}" rel="stylesheet" />
+<link href="{% static 'miethome/css/floors.css' %}" rel="stylesheet" />
+
+<div>
+    {% include "miethome/schemes/15/4.html" %}
+</div>
+
+<script src="{% static 'miethome/js/rooms.js' %}"></script>
+<script src="{% static 'miethome/js/housing.js' %}"></script>
+
+{% endblock %}
