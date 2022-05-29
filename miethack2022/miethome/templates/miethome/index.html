@@ -13,23 +13,12 @@
         {% include "miethome/schemes/housings.html" %}
     </div>
     <div id="floors" class="block_of_floors">
-        {% include "miethome/schemes/long_floors.html" %}
     </div>
     <div id="rooms" class="block_of_rooms">
-        {% include "miethome/schemes/15/4.html" %}
     </div>
 </div>
 
 <script type="text/javascript">
-function getHousing(event) {
-    let housingNumber = sessionStorage.getItem("housingNumber");
-    sessionStorage.setItem("housingNumber", event.data.housingNumber);
-}
-
-$(".building").each(function() {
-    $(this).click({housingNumber : $(this).text()}, getHousing);
-});
-
 function getRoom(event) {
     let housingNumber = sessionStorage.getItem("housingNumber");
     let roomNumber = event.data.roomNumber;
@@ -43,8 +32,57 @@ function getRoom(event) {
     });
 }
 
-$(".room").each(function() {
-    $(this).click({roomNumber : $(this).text()}, getRoom);
+function getRooms(event) {
+    let floorNumber = sessionStorage.getItem("floorNumber");
+    if (floorNumber !== event.data.floorNumber) {
+        $.ajax({
+            type: "GET",
+            url: "{% url 'get_rooms' %}",
+            data: {
+                "room_corpus": sessionStorage.getItem("housingNumber"),
+                "floor_number": event.data.floorNumber
+            },
+            dataType: "html",
+            success: function (data, textStatus, jqXHR) {
+                $("#rooms").html(data);
+                $(".room").each(function() {
+                    $(this).click({roomNumber : $(this).text()}, getRoom);
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Всё плохо.")
+            }
+        });
+    }
+}
+
+function getHousing(event) {
+    let housingNumber = sessionStorage.getItem("housingNumber");
+    if (housingNumber !== event.data.housingNumber)
+    {
+        $.ajax({
+            type: "GET",
+            url: "{% url 'get_floor' %}",
+            data: {
+                "room_corpus": event.data.housingNumber
+            },
+            dataType: "html",
+            success: function (data, textStatus, jqXHR) {
+                $("#floors").html(data);
+                $(".floor").each(function() {
+                    $(this).click({floorNumber : $(this).text()}, getRooms)
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Всё плохо.")
+            }
+        });
+    }
+    sessionStorage.setItem("housingNumber", event.data.housingNumber);
+}
+
+$(".building").each(function() {
+    $(this).click({housingNumber : $(this).text()}, getHousing);
 });
 </script>
 
