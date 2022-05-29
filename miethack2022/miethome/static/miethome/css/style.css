@@ -597,3 +597,8 @@ header__profile-pic:active {
     padding-bottom: 10px;
     text-align: center;
 }
+
+.student-photo {
+    height: 120px;
+    width: 90px;
+}

@@ -17,7 +17,7 @@ class Student(models.Model):
     id = models.IntegerField(primary_key=True, verbose_name='Номер карточки')
     full_name = models.CharField(max_length=100, verbose_name='ФИО')
     birth_date = models.CharField(max_length=10, verbose_name='Дата рождения')
-    img = models.ImageField(upload_to='static/img/students_photo/', verbose_name='Фото')
+    img = models.ImageField(upload_to='students_photo/', verbose_name='Фото')
     home_order_number = models.CharField(max_length=20, verbose_name='Номер приказа о предоставлении общежития')
     enrollment_order_number = models.CharField(max_length=10, verbose_name='Номер приказа о зачислении')
     date_enrollment = models.CharField(max_length=10, verbose_name='Дата зачисления')
