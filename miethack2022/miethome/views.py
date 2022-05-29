@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from miethome.forms import AddStudentForm, SearchForm
+from miethome.forms import AddStudentForm, SearchForm, EditStudentForm
 from miethome.models import Student, Room
 
 header = [
@@ -50,7 +50,7 @@ def schematic_search(request):
     form, students, msg = get_form_matches(request)
 
     context = {
-        'title': "Графический поиск",
+        'title': "Схематичный поиск",
         'header': header,
         'form': form,
         'students': students,
@@ -91,3 +91,35 @@ def get_form_matches(request):
         form = SearchForm()
 
     return form, students, matches_res
+
+
+def edit_student(request):
+    form = EditStudentForm(request.POST, instance=Student)
+    student = Student.objects.get(id=form.cleaned_data['id'])
+    if form.is_valid():
+        room = Room.objects.get(room_number=form.cleaned_data['room_room'],
+                                corpus_number=form.cleaned_data['room_corpus'])
+        student.save(id=form.cleaned_data['stud_id'],
+                     full_name=form.cleaned_data['full_name'],
+                     birth_date=form.cleaned_data['birth_date'],
+                     home_order_number=form.cleaned_data['home_order_number'],
+                     enrollment_order_number=form.cleaned_data['enrollment_order_number'],
+                     date_enrollment=form.cleaned_data['date_enrollment'],
+                     birth_place=form.cleaned_data['birth_place'],
+                     room=room,
+                     )
+        context = {
+            'title': "Схематичный поиск",
+            'header': header,
+        }
+        return render(request, 'miethome/schematic_search.html', context=context)
+
+
+def delete_student(request, id):
+        st = Student.objects.get(id=id)
+        st.delete()
+        context = {
+            'title': "Схематичный поиск",
+            'header': header,
+        }
+        return render(request, 'miethome/schematic_search.html', context=context)
