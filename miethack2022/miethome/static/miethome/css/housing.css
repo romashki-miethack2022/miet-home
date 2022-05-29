@@ -24,12 +24,12 @@
   display: inline;
 }
 
-.cell_tall {
+.block_tall {
   height: 100px;
   width: 100px;
 }
 
-.cell {
+.block {
   width: 60px;
 }
 
