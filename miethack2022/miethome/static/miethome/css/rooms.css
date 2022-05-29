@@ -22,10 +22,11 @@
   line-height: 80px;
   border-radius: 10px;
   font-size: 80%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .wash_room {
-  background-color: #8080ff;
+  background-color: #5e5ec9;
   width: 82px;
   background-image: url(../img/shower.png);
   background-repeat: no-repeat;
@@ -42,7 +43,7 @@
 }
 
 .warehouse {
-  background-color: #fb7f56;
+  background-color: #ff9875;
   width: 82px;
   background-image: url(../img/something.png);
   background-repeat: no-repeat;
@@ -51,7 +52,7 @@
 }
 
 .small_warehouse {
-  background-color: #fb7f56;
+  background-color: #ff9875;
   background-image: url(../img/something.png);
   background-repeat: no-repeat;
   background-size: 20px;
@@ -59,7 +60,7 @@
 }
 
 .commandant {
-  background-color: #9ef9ff;
+  background-color: #ff9ea3;
   background-image: url(../img/commandant.png);
   background-repeat: no-repeat;
   background-size: 20px;
@@ -67,7 +68,7 @@
 }
 
 .toilet {
-  background-color: #9e7070;
+  background-color: #cb9595;
   background-image: url(../img/toilet.svg);
   background-repeat: no-repeat;
   background-size: 20px;
@@ -75,7 +76,7 @@
 }
 
 .kitchen {
-  background-color: #fef267;
+  background-color: #b8ffc6;
   background-image: url(../img/kitchen.png);
   background-repeat: no-repeat;
   background-size: 20px;
