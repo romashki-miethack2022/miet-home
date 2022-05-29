@@ -10,30 +10,29 @@
     <link type="text/css" href="{% static 'miethome/css/style.css' %}" rel="stylesheet" />
 </head>
 <body>
-<header class="header">
-    <div class="wrapper">
-        <div class="header__wrapper">
-            <div class="header__logo">
-                <a href="{% url 'home' %}" class="header__logo-link">
-                    <img src="{% static 'miethome/img/cat.png'%}" alt="На главную" class="header__logo-pic">
-                </a>
+<div class="wrapper">
+    <header class="header">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <a href="{% url 'home' %}" class="header__logo-link">
+                        <img src="{% static 'miethome/img/cat.png'%}" alt="На главную" class="header__logo-pic">
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        {% for item in header %}
+                        <li class="header__item">
+                            <a href="{% url item.url_name %}" class="header__link">{{item.title}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
             </div>
-
-            <nav class="header__nav">
-                <ul class="header__list">
-                    {% for item in header %}
-                    <li class="header__item">
-                        <a href="{% url item.url_name %}" class="header__link">{{item.title}}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        </div>
-    </div>
 </header>
 
 {% block content %}
 {% endblock %}
+</div>
 
 </body>
 </html>

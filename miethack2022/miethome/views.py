@@ -123,3 +123,16 @@ def delete_student(request, id):
             'header': header,
         }
         return render(request, 'miethome/schematic_search.html', context=context)
+
+
+def get_floor(request):
+    if request.GET['room_corpus'] == '11':
+        filepath = 'miethome/schemes/long_floors.html'
+    else:
+        filepath = 'miethome/schemes/short_floors.html'
+    return render(request, filepath)
+
+
+def get_rooms(request):
+    return render(request, "miethome/schemes/" + request.GET['room_corpus'] \
+                           + "/" + request.GET['floor_number'] + ".html")
