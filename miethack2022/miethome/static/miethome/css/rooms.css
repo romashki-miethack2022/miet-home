@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .stage {
   overflow-y: hidden;
   overflow-x: auto;
@@ -9,18 +14,19 @@
 }
 
 .cell{
-  height: 100px;
-  width: 60px;
-  margin: 2px;
+  height: 80px;
+  width: 40px;
+  margin: 1px;
   display: inline-block;
   text-align: center;
-  line-height: 100px;
+  line-height: 80px;
   border-radius: 10px;
+  font-size: 80%;
 }
 
 .wash_room {
   background-color: #5c5cff;
-  width: 128px;
+  width: 82px;
 }
 
 .commandant {
