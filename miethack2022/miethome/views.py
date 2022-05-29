@@ -47,13 +47,14 @@ def add_student(request):
 
 
 def schematic_search(request):
-    form, students = get_form_matches(request)
+    form, students, msg = get_form_matches(request)
 
     context = {
         'title': "Графический поиск",
         'header': header,
         'form': form,
-        'students': students
+        'students': students,
+        'matches_res': msg
     }
 
     return render(request, 'miethome/schematic_search.html', context=context)
@@ -61,6 +62,7 @@ def schematic_search(request):
 
 def get_form_matches(request):
     students = []
+    matches_res = ""
 
     if request.method == 'POST':
         form = SearchForm(request.POST)
@@ -74,14 +76,18 @@ def get_form_matches(request):
                 if data[key]:
                     my_filters[key] = data[key]
 
-            # Получаем из бд объекты, соответствующие фильтрам
-            students = Student.objects.filter(**my_filters)
+            # Получаем из бд объекты, соответствующие фильтрам.
+            # Если словарь с фильтрами пустой, то данные не выводятся (так как форма не была заполнена)
+            if my_filters:
+                students = Student.objects.filter(**my_filters)
+
+            # Формируем сообщение пользователю о результате поиска
             if students:
-                print(f"Найдено совпадение: {students}")
+                matches_res = "Найденные студенты:"
             else:
-                print("Нет ничего")
+                matches_res = "Студенты с заданными фильтрами не найдены."
 
     else:
         form = SearchForm()
 
-    return form, students
+    return form, students, matches_res

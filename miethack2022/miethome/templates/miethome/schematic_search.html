@@ -26,7 +26,7 @@
     <!--   Вывод найденных студентов   -->
     <div class="matches__found">
         {% if students %}
-        <p class="matches__header">Найденные студенты:</p>
+        <p class="matches__header">{{ matches_res }}</p>
         {% for student in students %}
         <div class="matches__item">
             <img src="{{student.img.url}}" alt="Фото" class="student-photo">
@@ -41,7 +41,7 @@
         </div>
         {% endfor %}
         {% else %}
-        <p class="matches__header">Студенты с заданными фильтрами не найдены.</p>
+        <p class="matches__header">{{matches_res}}</p>
         {% endif %}
     </div>
 </div>
