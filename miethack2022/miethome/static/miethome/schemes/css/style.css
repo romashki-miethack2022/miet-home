@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.stage {
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.up {
+    margin-bottom: 60px;
+}
+
+.cell{
+  height: 80px;
+  width: 40px;
+  margin: 1px;
+  display: inline-block;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 10px;
+  font-size: 80%;
+}
+
+.wash_room {
+  background-color: #5c5cff;
+  width: 82px;
+}
+
+.commandant {
+  background-color: #00e4f5;
+}
+
+.toilet {
+  background-color: #734a4a;
+}
+
+.kitchen {
+  background-color: #ffea00;
+}
+
+.stair {
+  background-color: #787878;
+}
+
+.room {
+  background-color: #b1b1e2;
+  cursor: pointer;
+}
+
+
+.room:hover {
+  background-color: #9999f0;
+}
+
+.room:active {
+  background-color: #47ff8e;
+}
