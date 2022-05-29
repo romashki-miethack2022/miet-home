@@ -7,15 +7,16 @@
 <link href="{% static 'miethome/css/rooms.css' %}" rel="stylesheet" />
 <link href="{% static 'miethome/css/housing.css' %}" rel="stylesheet" />
 <link href="{% static 'miethome/css/floors.css' %}" rel="stylesheet" />
-
-<div id="housings" class="block_of_housings">
-    {% include "miethome/schemes/housings.html" %}
-</div>
-<div id="floors" class="block_of_floors">
-    {% include "miethome/schemes/long_floors.html" %}
-</div>
-<div id="rooms" class="block_of_rooms">
-    {% include "miethome/schemes/15/4.html" %}
+<div class="blocks">
+    <div id="housings" class="block_of_housings">
+        {% include "miethome/schemes/housings.html" %}
+    </div>
+    <div id="floors" class="block_of_floors">
+        {% include "miethome/schemes/long_floors.html" %}
+    </div>
+    <div id="rooms" class="block_of_rooms">
+        {% include "miethome/schemes/15/4.html" %}
+    </div>
 </div>
 
 <script src="{% static 'miethome/js/rooms.js' %}"></script>

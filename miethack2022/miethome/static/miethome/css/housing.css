@@ -1,4 +1,5 @@
 .housing {
+  margin-left: 35px;
   overflow-y: hidden;
   overflow-x: auto;
   white-space: nowrap;
@@ -6,7 +7,7 @@
 
 .building{
   height: 308px;
-  margin-left: 20px;
+  margin: 10px;
   text-align: center;
   display: inline-block;
   line-height: 100px;
@@ -20,7 +21,6 @@
 }
 
 .tall {
-  
   display: inline;
 }
 
